@@ -739,43 +739,18 @@
   var muted     = false;
   var playing   = false;
 
-  var BPM  = 140;
-  var BEAT = 60 / BPM;
-  var S = BEAT / 2, Q = BEAT, H = BEAT * 2, E = BEAT / 4, DE = BEAT * 0.75;
-  var F = {
-    REST:0,
-    C4:261.63, D4:293.66, E4:329.63, F4:349.23, G4:392.00,
-    A4:440.00, B4:493.88, Bb4:466.16, F4s:369.99, G4s:415.30,
-    C5:523.25, D5:587.33, E5:659.25, F5:698.46, G5:783.99, A5:880.00,
-    Bb5:932.33, F5s:739.99
-  };
-  // Everybody (Backstreet's Back) — BPM 140
   var SEQ = [
-    // INTRO RIFF
-    [F.A4,E],[F.A4,E],[F.REST,E],[F.A4,E],[F.REST,E],[F.A4,E],[F.G4s,E],[F.A4,S],[F.REST,S],
-    // VERSE — "Everybody, yeah"
-    [F.A4,Q],[F.A4,E],[F.B4,E],[F.C5,S],[F.B4,S],[F.A4,Q],[F.REST,S],
-    // "Rock your body"
-    [F.A4,E],[F.G4,E],[F.A4,E],[F.G4,E],[F.E4,Q],[F.REST,S],
-    // "Everybody, yeah" repeat
-    [F.A4,Q],[F.A4,E],[F.B4,E],[F.C5,S],[F.B4,S],[F.A4,Q],[F.REST,S],
-    // "Rock your body right"
-    [F.A4,E],[F.G4,E],[F.A4,E],[F.B4,E],[F.A4,H],[F.REST,S],
-    // PRE-CHORUS — "Backstreet's back, alright"
-    [F.E5,S],[F.E5,E],[F.E5,E],[F.D5,E],[F.C5,S],[F.REST,E],
-    [F.D5,E],[F.E5,E],[F.A4,Q],[F.REST,S],
-    // "Alright!" punch
-    [F.C5,E],[F.B4,E],[F.A4,S],[F.G4,S],[F.A4,Q],[F.REST,Q],
-    // CHORUS DROP — "Oh my god we're back again"
-    [F.A4,E],[F.A4,E],[F.B4,E],[F.A4,E],[F.G4,E],[F.A4,E],[F.B4,S],[F.A4,S],
-    [F.G4,Q],[F.REST,S],
-    // "Brothers, sisters, everybody sing"
-    [F.G4,E],[F.A4,E],[F.B4,E],[F.A4,E],[F.G4,E],[F.F4s,E],[F.G4,S],[F.REST,S],
-    // "Gonna bring it to you right"
-    [F.A4,E],[F.B4,E],[F.C5,E],[F.B4,E],[F.A4,Q],[F.REST,S],
-    // "Backstreet's back — ALRIGHT!"
-    [F.E5,S],[F.D5,E],[F.C5,E],[F.D5,E],[F.E5,E],[F.A4,Q],[F.REST,S],
-    [F.C5,E],[F.B4,E],[F.A4,H],[F.REST,Q]
+    [698.46,0.3158],[622.25,0.3158],[622.25,0.9474],[554.37,0.3158],[466.16,0.4737],
+    [0,0.7895],[466.16,0.9474],[440.00,0.3158],[0,0.6316],
+    [698.46,0.3158],[622.25,0.3158],[622.25,0.9474],[554.37,0.3158],[466.16,0.4737],
+    [0,0.7895],[466.16,0.9474],[440.00,0.3158],[0,0.6316],
+    [698.46,0.3158],[622.25,0.3158],[622.25,0.4737],[698.46,0.1579],[622.25,0.3158],
+    [554.37,0.3158],[466.16,0.4737],[0,0.7895],
+    [466.16,0.3158],[0,0.3158],[554.37,0.6316],[622.25,0.3158],
+    [466.16,0.3158],[466.16,0.3158],[466.16,0.6316],[0,2.2105],
+    [466.16,0.6316],[554.37,0.6316],[622.25,0.3158],[0,0.3158],
+    [932.33,0.3158],[932.33,0.3158],[0,4.4211],
+    [932.33,0.3158],[932.33,0.3158]
   ];
 
   function playMelody() {
