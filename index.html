@@ -741,21 +741,41 @@
 
   var BPM  = 140;
   var BEAT = 60 / BPM;
-  var S = BEAT / 2, Q = BEAT, H = BEAT * 2, E = BEAT / 4;
+  var S = BEAT / 2, Q = BEAT, H = BEAT * 2, E = BEAT / 4, DE = BEAT * 0.75;
   var F = {
-    REST:0, C4:261.63, D4:293.66, E4:329.63, F4:349.23, G4:392.00,
-    A4:440.00, B4:493.88, C5:523.25, D5:587.33, E5:659.25,
-    F5:698.46, G5:783.99, A5:880.00, B5:987.77, A3:220.00, B3:246.94, G3:196.00
+    REST:0,
+    C4:261.63, D4:293.66, E4:329.63, F4:349.23, G4:392.00,
+    A4:440.00, B4:493.88, Bb4:466.16, F4s:369.99, G4s:415.30,
+    C5:523.25, D5:587.33, E5:659.25, F5:698.46, G5:783.99, A5:880.00,
+    Bb5:932.33, F5s:739.99
   };
-  // [freq, duration]
+  // Everybody (Backstreet's Back) — BPM 140
   var SEQ = [
-    [F.E5,S],[F.REST,E],[F.E5,E],[F.REST,E],[F.E5,E],[F.REST,E],[F.D5,S],[F.C5,S],[F.REST,S],
+    // INTRO RIFF
+    [F.A4,E],[F.A4,E],[F.REST,E],[F.A4,E],[F.REST,E],[F.A4,E],[F.G4s,E],[F.A4,S],[F.REST,S],
+    // VERSE — "Everybody, yeah"
     [F.A4,Q],[F.A4,E],[F.B4,E],[F.C5,S],[F.B4,S],[F.A4,Q],[F.REST,S],
+    // "Rock your body"
     [F.A4,E],[F.G4,E],[F.A4,E],[F.G4,E],[F.E4,Q],[F.REST,S],
+    // "Everybody, yeah" repeat
     [F.A4,Q],[F.A4,E],[F.B4,E],[F.C5,S],[F.B4,S],[F.A4,Q],[F.REST,S],
+    // "Rock your body right"
     [F.A4,E],[F.G4,E],[F.A4,E],[F.B4,E],[F.A4,H],[F.REST,S],
-    [F.E5,S],[F.E5,E],[F.E5,E],[F.D5,E],[F.C5,E],[F.D5,E],[F.E5,E],[F.A4,Q],[F.REST,S],
-    [F.C5,E],[F.B4,E],[F.A4,Q],[F.REST,Q]
+    // PRE-CHORUS — "Backstreet's back, alright"
+    [F.E5,S],[F.E5,E],[F.E5,E],[F.D5,E],[F.C5,S],[F.REST,E],
+    [F.D5,E],[F.E5,E],[F.A4,Q],[F.REST,S],
+    // "Alright!" punch
+    [F.C5,E],[F.B4,E],[F.A4,S],[F.G4,S],[F.A4,Q],[F.REST,Q],
+    // CHORUS DROP — "Oh my god we're back again"
+    [F.A4,E],[F.A4,E],[F.B4,E],[F.A4,E],[F.G4,E],[F.A4,E],[F.B4,S],[F.A4,S],
+    [F.G4,Q],[F.REST,S],
+    // "Brothers, sisters, everybody sing"
+    [F.G4,E],[F.A4,E],[F.B4,E],[F.A4,E],[F.G4,E],[F.F4s,E],[F.G4,S],[F.REST,S],
+    // "Gonna bring it to you right"
+    [F.A4,E],[F.B4,E],[F.C5,E],[F.B4,E],[F.A4,Q],[F.REST,S],
+    // "Backstreet's back — ALRIGHT!"
+    [F.E5,S],[F.D5,E],[F.C5,E],[F.D5,E],[F.E5,E],[F.A4,Q],[F.REST,S],
+    [F.C5,E],[F.B4,E],[F.A4,H],[F.REST,Q]
   ];
 
   function playMelody() {
