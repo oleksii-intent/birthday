@@ -430,8 +430,9 @@
   .xp-dialog-bar .winbar-dots { margin-left: auto; display: flex; gap: 5px; }
   .xp-dialog-body {
     background: #c8d8f0;
-    padding: 28px 24px 22px;
+    padding: 0 24px 22px;
     text-align: center;
+    overflow: hidden;
   }
   .xp-dialog-body .envelope-icon {
     font-size: 52px;
@@ -442,9 +443,10 @@
   .xp-dialog-body .invite-photo {
     display: block;
     object-fit: cover;
-    margin: -28px -24px 16px;
+    margin: 0 -24px 20px;
     width: calc(100% + 48px);
-    max-height: 280px;
+    max-height: 320px;
+  }
   .xp-dialog-body p {
     font-family: 'Comic Sans MS', 'Comic Sans', 'Nunito', sans-serif; font-style: normal;
     font-size: 16px;
@@ -456,9 +458,10 @@
   }
   /* 2000s-style 3D button */
   .xp-open-btn {
-    display: inline-block;
+    display: block;
+    width: 100%;
     font-family: 'Comic Sans MS', 'Comic Sans', 'Nunito', sans-serif; font-style: normal;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: bold;
     color: #660066;
     background: #FFFF00;
@@ -466,11 +469,11 @@
     border-left: 3px solid #FFFF88;
     border-right: 3px solid #999900;
     border-bottom: 3px solid #666600;
-    padding: 10px 28px;
+    padding: 14px 20px;
     cursor: pointer;
-    letter-spacing: 1px;
-    box-shadow: 0 0 0 3px #FF00FF, 0 0 0 5px #660066;
-    text-shadow: 1px 1px 0 #ffcc00;
+    letter-spacing: 2px;
+    box-shadow: 0 0 0 3px #FF00FF;
+    text-shadow: 1px 1px 0 #cccc00;
     transition: filter 0.1s;
     -webkit-appearance: none;
     appearance: none;
@@ -527,7 +530,6 @@
       </div>
     </div>
     <div class="xp-dialog-body">
-      <span class="envelope-icon">📩</span>
       <img src="5262629660246350980.jpg" alt="Іменинники" class="invite-photo">
       <p>Ти отримав секретне запрошення.<br>Натисни щоб відкрити.</p>
       <button class="xp-open-btn" id="open-btn">📩 ВІДКРИТИ ЗАПРОШЕННЯ</button>
