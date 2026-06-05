@@ -496,6 +496,38 @@
     filter: brightness(0.92);
   }
 
+  /* ── WISHLIST BUTTON ── */
+  #wishlist-btn {
+    font-family: 'Comic Sans MS', 'Comic Sans', 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    background: #FFFF00;
+    border: none;
+    padding: 14px 36px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    border-top: 3px solid #FFFFAA;
+    border-left: 3px solid #FFFF88;
+    border-right: 3px solid #999900;
+    border-bottom: 3px solid #666600;
+    box-shadow: 0 0 0 3px #FF00FF, 0 0 18px #FF00FF, 0 0 40px #FF6600;
+    animation: wishlistPulse 1s ease-in-out infinite;
+  }
+  #wishlist-btn:active {
+    border-top: 3px solid #666600;
+    border-left: 3px solid #666600;
+    border-right: 3px solid #FFFFAA;
+    border-bottom: 3px solid #FFFFAA;
+  }
+  @keyframes wishlistPulse {
+    0%, 100% { box-shadow: 0 0 0 3px #FF00FF, 0 0 14px #FF00FF, 0 0 30px #FF6600; }
+    50%       { box-shadow: 0 0 0 3px #FF00FF, 0 0 28px #FF00FF, 0 0 60px #FF6600, 0 0 80px #FFFF00; }
+  }
+
   /* ── AUDIO TOGGLE BUTTON ── */
   #audio-toggle {
     position: fixed;
@@ -690,6 +722,13 @@
       </p>
     </div>
 
+    <!-- WISHLIST BUTTON -->
+    <div style="text-align:center;margin:24px 0 8px;">
+      <button id="wishlist-btn" onclick="document.getElementById('wishlist-overlay').style.display='flex'">
+        💸 ВІШЛІСТ 💸
+      </button>
+    </div>
+
     <div class="sep">★ ✦ ★ ✦ ★ ✦ ★ ✦ ★</div>
 
     <!-- COUNTDOWN TIMER -->
@@ -712,6 +751,24 @@
     </div>
 
   </div><!-- /card -->
+
+  <!-- WISHLIST OVERLAY -->
+  <div id="wishlist-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,20,0.88);z-index:9998;align-items:center;justify-content:center;padding:16px;">
+    <div style="max-width:400px;width:100%;border:2px solid #7ea6d4;border-radius:6px;overflow:hidden;box-shadow:4px 4px 16px rgba(0,0,0,0.8);">
+      <div style="background:linear-gradient(to bottom,#1c6bdc,#0a3a8f);padding:6px 10px;display:flex;align-items:center;gap:7px;font-family:Tahoma,sans-serif;font-size:13px;font-weight:bold;color:#fff;text-shadow:1px 1px 2px #000;">
+        <span>💰</span>
+        <span>Вішліст.exe</span>
+        <div style="margin-left:auto;display:flex;gap:5px;">
+          <span class="dot dot-min"></span>
+          <span class="dot dot-max"></span>
+          <span class="dot dot-close" onclick="document.getElementById('wishlist-overlay').style.display='none'" style="cursor:pointer"></span>
+        </div>
+      </div>
+      <div style="background:#c8d8f0;text-align:center;padding:0 0 20px;">
+        <img src="Spongebob Squarepants Money GIF.gif" alt="Mr. Krabs loves money" style="width:100%;display:block;margin-bottom:16px;">
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
